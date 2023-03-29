@@ -1,38 +1,40 @@
 package org.dows.aicode.rest.schema;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.Parameters;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.dows.framework.api.Response;
 import org.dows.aicode.api.schema.request.AppSchemaRequest;
 import org.dows.aicode.biz.schema.AppSchemaBiz;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
-
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
-* @description project descr:元数据:档案分类字典接口
-*
-* @author lait.zhang
-* @date 2023年3月29日 下午2:25:05
-*/
+ * @author lait.zhang
+ * @description project descr:元数据:档案分类字典接口
+ * @date 2023年3月29日 下午2:25:05
+ */
 @RequiredArgsConstructor
 @RestController
-@Api(tags = "档案分类字典接口")
+@Tag(name = "档案分类字典接口", description = "系统用户接口")
 public class AppSchemaRest {
     private final AppSchemaBiz appSchemaBiz;
 
     /**
-    * 创建应用元数概要
-    * @param
-    * @return
-    */
-    @ApiOperation("创建应用元数概要")
+     * 创建应用元数概要
+     *
+     * @param
+     * @return
+     */
+    @ApiResponse(responseCode = "2xx",description = "动物园实体对象")
+    @Operation(summary = "创建应用元数概要")
     @PostMapping("v1/schema/appSchema/createAppSchema")
-    public String createAppSchema(@RequestBody @Validated AppSchemaRequest appSchema ) {
+    public String createAppSchema(@RequestBody @Validated AppSchemaRequest appSchema) {
         return appSchemaBiz.createAppSchema(appSchema);
     }
 

@@ -2,6 +2,7 @@ package org.dows.aicode.biz.schema;
 
 import org.dows.framework.api.Response;
 import org.dows.aicode.api.schema.request.AppSchemaRequest;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.HashMap;;
 * @author lait.zhang
 * @date 2023年3月29日 下午2:25:05
 */
+@Service
 public class AppSchemaBiz{
     /**
     * @param

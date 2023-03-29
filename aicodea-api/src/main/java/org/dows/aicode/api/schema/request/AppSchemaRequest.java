@@ -1,36 +1,28 @@
 package org.dows.aicode.api.schema.request;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
-
-import javax.validation.constraints.*;
-import java.util.Date;
-import java.math.BigDecimal;
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
-* @description 
-*
-* @author 
-* @date 
-*/
+ * @author
+ * @description
+ * @date
+ */
 @Data
 @NoArgsConstructor
-@ApiModel(value = "AppSchema 对象", description = "应用概要")
-public class AppSchemaRequest{
-    @ApiModelProperty("应用分类ID")
+@Schema(name = "AppSchema 对象", title = "应用概要")
+public class AppSchemaRequest {
+    @Schema(title = "应用分类ID")
     private String appCategoryId;
 
-    @ApiModelProperty("应用名")
+    @Schema(title = "应用名")
     private String appName;
 
-    @ApiModelProperty("应用CODE")
+    @Schema(title = "应用CODE")
     private String appCode;
 
-    @ApiModelProperty("pass配置")
+    @Schema(title = "pass配置")
     private String passConfig;
 
 

@@ -12,9 +12,9 @@ server:
 
 spring:
     application:
-        name: dows-pay
+        name: dows-aicodea
     profiles:
-        include: mysql,mybatis,mvc,redis,alipay
-        active: sit
+        include: aicodea-mysql,aicodea-mybatis,aicodea-redis
+        active: dev
 
 
