@@ -59,8 +59,8 @@ public class OpenApiConfig {
     public GroupedOpenApi adminApi() {
         return GroupedOpenApi.builder()
                 .packagesToScan("org.dows.aicode.rest")
-                .group("sys接口")
-                .pathsToMatch("/v1/schema/**")
+                .group("AICodea接口")
+                //.pathsToMatch("/v1/schema/**")
                 .build();
     }
 }
