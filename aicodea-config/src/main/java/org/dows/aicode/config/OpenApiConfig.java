@@ -29,7 +29,7 @@ public class OpenApiConfig {
                         .version("1.0.0-SNAPSHOT")
                         .license(new License().name("dows").url("")))
                 .externalDocs(new ExternalDocumentation()
-                        .description("sss")
+                        .description("Aicodea")
                         .url("http://localhost:9009"))
                 .specVersion(SpecVersion.V31);
                 // 配置Authorizations
@@ -58,8 +58,26 @@ public class OpenApiConfig {
     @Bean
     public GroupedOpenApi adminApi() {
         return GroupedOpenApi.builder()
-                .packagesToScan("org.dows.aicode.rest")
-                .group("AICodea接口")
+                .packagesToScan("org.dows.aicode.rest.admin")
+                .group("admin")
+                //.pathsToMatch("/v1/schema/**")
+                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi developerApi() {
+        return GroupedOpenApi.builder()
+                .packagesToScan("org.dows.aicode.rest.developer")
+                .group("developer")
+                //.pathsToMatch("/v1/schema/**")
+                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi tenantApi() {
+        return GroupedOpenApi.builder()
+                .packagesToScan("org.dows.aicode.rest.tenant")
+                .group("tenant")
                 //.pathsToMatch("/v1/schema/**")
                 .build();
     }
